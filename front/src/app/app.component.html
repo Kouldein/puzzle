@@ -1,0 +1,48 @@
+<div>
+  <div class="dropzone" appDrag (files)="fileDropped($event)">
+      <div class="text-wrapper">
+        <div class="centred">
+        Drag and drop your image or 
+        <a (click)="selectFile.click()" class="browse-button">browse</a> 
+        it
+        </div>
+      </div>
+  </div>
+  <input type="file" #selectFile name="myImage" style="display: none;" value="select" (change)="imageDataChanged($event)" accept="image/png, image/jpeg"/>
+  <div class="puzzle-holder">
+    <div class="grid-container">
+      <div *ngFor="let piece of getPuzzleRows(); let rowIndex = index;">
+          <div class="grid-item">
+            <app-puzzle draggable="true" class="drag-item" [piece]="piece" (dragstart)="dragStart($event)" (dragover)="dragOver($event)" (dragenter)="dragEnter($event)" (dragleave)="dragLeave($event)" (drop)="drop($event)" (dragend)="dragEnd($event)"></app-puzzle>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="solved-label" [ngClass]="{'not-solved': !getIsSolved()}">
+    <p>Solved!🥳</p>
+  </div>
+  <div class="text-holder">
+    <p>Shuffle with rotation?</p>
+  </div>
+  <div class="checkbox-holder">
+    <button (click)="shufflePuzzle()" class="shuffle-button">Shuffle</button>
+    <div class="checkbox">
+      <input type="checkbox" id="myCheckbox" [(ngModel)]="shuffleRotation" />
+      <label for="myCheckbox"> </label>
+      
+    </div>
+  </div>
+<div class="showing-box">
+  <button (click)="toggleShowing()" class="showing-button">{{showText}}</button>
+</div>
+  <div class="puzzle-holder" [ngClass]="{'showing-solution': !showSolution}">
+    <div class="grid-container">
+      <div *ngFor="let piece of solve; let rowIndex = index;">
+          <div class="grid-item">
+            <img [src]="piece.url" width="100px" height="100px">
+          </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

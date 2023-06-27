@@ -1,0 +1,18 @@
+.fancy-rotation{
+    transition: 0.5s;
+}
+
+.drag-item{
+    width: 100px;
+    height: 100px;
+}
+
+.drag-over {
+    cursor: default;
+    opacity: 0.7;
+}
+  
+.dragging {
+    cursor: default;
+    opacity: 0.0;
+}

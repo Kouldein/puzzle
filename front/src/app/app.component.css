@@ -1,0 +1,189 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dropzone{
+    height: 150px;
+    min-width: 100px;
+    display: table;
+    background-color: lightgray;
+    width: 300px;
+    border: dashed 1px darkgrey;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.text-wrapper{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.centred{
+    text-align: center;
+}
+
+.browse-button{
+    color: blue;
+    cursor: pointer;
+}
+
+
+.puzzle-holder{
+    display: flex;
+    width: 1000px;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 100px)); 
+    grid-auto-rows: minmax(100px, 100px); 
+    grid-gap: 1px; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.grid-item{
+   margin-top: 1px;
+   width: 100px;
+   height: 100px; 
+}   
+
+.drag-item{
+    width: 100px;
+    height: 100px;
+}
+
+.not-solved{
+    display: none;
+}
+
+.text-holder{
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+    text-align: center;
+}
+
+.solved-label {
+    margin-top: 40px;
+    background-color: #57c16b;
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.solved-label p {
+    margin: 0; 
+}
+
+.shuffle-button {
+    margin: auto;
+    background-color: #57c16b;
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 100px;
+    border: none;
+}
+
+.shuffle-button:hover{
+    cursor: pointer;
+}
+
+.button-holder{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+
+.showing-solution{
+    display: none;
+}
+
+.showing-box{
+    margin-top: 20px;
+    display: flex;
+}
+
+.showing-button {
+    margin: auto;
+    background-color: #57c16b;
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 200px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showing-button:hover{
+    cursor: pointer;
+}
+
+.checkbox-holder{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    text-align: center;
+}
+
+.checkbox {
+    margin: auto;
+    background-color: #57c16b;
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-align: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: fit-content;
+    border: none;
+}
+  
+.checkbox input[type="checkbox"] {
+    display: none; 
+}
+  
+.checkbox input[type="checkbox"] + label {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.checkbox input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+}
+  
+.checkbox input[type="checkbox"]:checked + label::before {
+    content: "✔";
+    background-color: #57c16b;
+}
+  
+.checkbox input[type="checkbox"]:checked + label::after {
+    font-weight: bold;
+    font-size: 14px;
+}
+  
