@@ -18,9 +18,15 @@
       </div>
     </div>
   </div>
-  <div class="solved-label" [ngClass]="{'not-solved': !getIsSolved()}">
+  <div class="solved-label" *ngIf="getIsSolved(); else elseBlock" [ngClass]="{'not-solved': !getIsSolved()}">
     <p>Solved!🥳</p>
   </div>
+  
+  <ng-template #elseBlock>
+    <div class="label-holder">
+      <button (click)="solvePuzzle()" class="shuffle-button">Solve puzzle</button>
+    </div>
+  </ng-template>
   <div class="text-holder">
     <p>Shuffle with rotation?</p>
   </div>

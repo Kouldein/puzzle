@@ -15,6 +15,15 @@ export class PuzzleService {
 
   }
 
+  solvePuzzle(){
+    for(const piece of this.currentPuzzles){
+      piece.currentPosition = piece.position;
+      piece.rotation = 0;
+    }
+    this.isValid();
+    this.sortPuzzles();
+  }
+
   sortPuzzles() {
     this.currentPuzzles.sort((a, b) => {
       if (a.currentPosition < b.currentPosition) {
@@ -42,8 +51,8 @@ export class PuzzleService {
         this.currentPuzzles[indexes[i]].rotation += Math.floor(Math.random() * (6));
       }
     }
-    this.isValid()
-    this.sortPuzzles()
+    this.isValid();
+    this.sortPuzzles();
   }
 
   isValid(){

@@ -42,6 +42,22 @@ export class AppComponent implements OnInit{
     }
   }
 
+  solvePuzzle(){
+    const elements = document.getElementsByClassName('drag-item');
+    for (let i = 0; i < elements.length; i++) {
+      const div:any = elements[i].children[0].children[0].classList.remove('fancy-rotation')
+    }
+    this.puzzleService.solvePuzzle();
+    setTimeout(() => {
+      this.prepareData();
+      const elements = document.getElementsByClassName('drag-item');
+      for (let i = 0; i < elements.length; i++) {
+        const div:any = elements[i].children[0].children[0].classList.add('fancy-rotation')
+      }
+    }, 200)
+  }
+
+
   shufflePuzzle(){
     if(this.shuffleRotation){
       const elements = document.getElementsByClassName('drag-item');

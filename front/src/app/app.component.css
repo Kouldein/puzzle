@@ -68,6 +68,7 @@
 }
 
 .solved-label {
+    display: block;
     margin-top: 40px;
     background-color: #57c16b;
     color: white; 
@@ -115,6 +116,7 @@
 .showing-box{
     margin-top: 20px;
     display: flex;
+    margin-bottom: 20px;
 }
 
 .showing-button {
@@ -130,6 +132,19 @@
     border: none;
     margin-left: auto;
     margin-right: auto;
+}
+
+.label-holder{
+    display: block;
+    margin-top: 30px;
+    padding: 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    text-align: center; 
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -5px;
 }
 
 .showing-button:hover{
